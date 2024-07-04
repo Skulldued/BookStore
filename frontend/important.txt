@@ -1,0 +1,4 @@
+  <Route path={"/courses"} element={<Courses/>}/>
+
+   <Link to="/courses">Course</Link>
+  path={"/courses"} ye path or to="/courses" dono same hona chahiye

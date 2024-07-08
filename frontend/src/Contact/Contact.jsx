@@ -6,7 +6,7 @@ const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   return (
-    <div className='max-w-[1240px] mx-auto md:mt-28 mt-10'>
+    <div className='max-w-[1240px] mx-auto md:mt-20 mt-10'>
        <div className="grid md:grid-cols-2 mx-auto">
         <div>
           <img src={contactImg} alt="@contact" />

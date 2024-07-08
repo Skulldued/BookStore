@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -50,11 +51,14 @@ const Navbar = () => {
       <li>
         <Link to="/contact">Contact</Link>
       </li>
+      <li>
+        <Link to="/signup">SignUp</Link>
+      </li>
     </>
   );
   return (
     <div
-      className={`max-w-screen-2xl bg-red-900  container mx-auto z-50 w-full fixed right-0 top-0 left-0  md:px-20 px-4 ${
+      className={`max-w-screen-2xl glass  container mx-auto z-50 w-full fixed right-0 top-0 left-0  md:px-20 px-4 ${
         sticky
           ? "sticky-navbar shadow-md bg-blue-600 text-white duration-200 transition-all ease-in-out"
           : ""
@@ -86,7 +90,9 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <a className="font-bold text-2xl">BookStore</a>
+          <Link to="/" className="font-bold text-2xl">
+            <img src={logo} className="w-16" alt="" />
+          </Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">

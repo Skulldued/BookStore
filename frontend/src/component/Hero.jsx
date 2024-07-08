@@ -1,6 +1,13 @@
 import React from "react";
 import Book from "../assets/book.png";
+import { useForm } from "react-hook-form";
 const Hero = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <div>
       <div className="max-w-screen-2xl container mx-auto md:px-20 my-10 md:my-20 px-4">
@@ -18,6 +25,7 @@ const Hero = () => {
                 aliquid commodi quod minus doloribus.
               </p>
             </div>
+            <form action="" method="post" onSubmit={handleSubmit(onsubmit)} >
             <label className="input input-bordered flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -30,19 +38,23 @@ const Hero = () => {
               </svg>
               <input
                 type="text"
+                {...register('name',{required:true})}
                 className="grow"
                 placeholder="Enter your Email to login"
               />
+              {errors.name && <p className="text-red-700">Enter Email Please</p>}
             </label>
             <div>
-              <button className="bg-blue-800 md:my-8 my-4 p-3 rounded-lg">Secondary</button>
+              <button className="bg-blue-800 md:my-8 my-4 p-3 rounded-lg">
+                Send
+              </button>
             </div>
+            </form>
           </div>
           <div className="flex items-center justify-center">
             <img src={Book} alt="" />
           </div>
         </div>
-       
       </div>
     </div>
   );

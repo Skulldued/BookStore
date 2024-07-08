@@ -4,7 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    background-color: black;
+}
+
 body{
     font-family: "Montserrat", sans-serif;
     background-color: black;
+}
+
+
+.glass{
+    background: rgba( 255, 255, 255, 0 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+
+/* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+.height{
+    height: 350px;
 }
